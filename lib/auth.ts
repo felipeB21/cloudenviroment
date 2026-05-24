@@ -37,7 +37,7 @@ export const auth = betterAuth({
       plan: {
         type: ["FREE", "PREMIUM"],
         required: false,
-        defaultValue: "free",
+        defaultValue: "FREE",
         input: false,
       },
     },

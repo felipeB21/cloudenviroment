@@ -4,12 +4,12 @@ const ALGORITHM = "aes-256-gcm";
 
 const ENCRYPTION_KEY = process.env.ENCRYPTION_KEY as string;
 
-if (!ENCRYPTION_KEY || ENCRYPTION_KEY.length !== 32) {
-  throw new Error("ENCRYPTION_KEY debe ser de 32 caracteres");
+if (!ENCRYPTION_KEY || Buffer.from(ENCRYPTION_KEY).length !== 32) {
+  throw new Error("ENCRYPTION_KEY debe ser de 32 bytes");
 }
 
 export function encryptValue(text: string): string {
-  const iv = crypto.randomBytes(16);
+  const iv = crypto.randomBytes(12);
   const cipher = crypto.createCipheriv(
     ALGORITHM,
     Buffer.from(ENCRYPTION_KEY),

@@ -24,3 +24,7 @@ export const createProjectSchema = z.object({
   repositoryUrl: urlSchema,
   webUrl: urlSchema,
 });
+
+export const updateProjectSchema = createProjectSchema
+  .partial()
+  .required({ name: true });

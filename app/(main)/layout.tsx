@@ -39,8 +39,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Header />
-          <main className="py-40 ">{children}</main>
-          <Toaster />
+          <main className="py-40 p-3 max-w-4xl mx-auto">{children}</main>
+          <Toaster richColors position="bottom-right" />
         </ThemeProvider>
       </body>
     </html>
